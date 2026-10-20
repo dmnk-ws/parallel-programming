@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.dSYM/
+*.out
+bin/
+build/
+
+# Compiled executables in exercises/ (they have no extension)
+exercises/*
+!exercises/*/
+!exercises/*.c
+!exercises/*.h
+!exercises/Makefile
+!exercises/*.md
+
+# Cluster / batch job output (Slurm, PBS)
+slurm-*.out
+*.o[0-9]*
+*.e[0-9]*
+
+# Crashes, debugging, profiling
+core
+core.*
+vgcore.*
+gmon.out
+perf.data*
+callgrind.out.*
+massif.out.*
+*.prof
+
+# MPI / OpenMP tracing tools (Score-P, Vampir, TAU, Intel)
+scorep-*/
+*.otf2
+*.otf
+profile.*
+*.stf*
+*.tau
+
+# clangd / IDE tooling
+compile_commands.json
+.cache/
+.vscode/
+.idea/
+*.swp
