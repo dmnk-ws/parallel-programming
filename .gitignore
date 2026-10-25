@@ -18,6 +18,13 @@ exercises/*
 !exercises/*.h
 !exercises/Makefile
 !exercises/*.md
+exercises/*/*
+!exercises/*/*.c
+!exercises/*/*.h
+!exercises/*/*.sh
+!exercises/*/*.csv
+!exercises/*/Makefile
+!exercises/*/*.md
 
 # Cluster / batch job output (Slurm, PBS)
 slurm-*.out
