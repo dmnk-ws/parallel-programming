@@ -37,6 +37,8 @@ void *mutexWorker(void *arg) {
   return NULL;
 }
 
+// independent computation possible, no waiting for previous result
+// effort of computation is equally distributed
 /*
  * Block: contiguous chunks, step = 1, last thread takes the remainder.
  * n = 10, T = 3:
@@ -65,6 +67,10 @@ double block(long n, int T, pthread_t *threads, Work *work) {
   return pi;
 }
 
+// independent computation possible, no waiting for previous result
+// effort of computation is equally distributed
+// cyclic with real data causes memory jumps which reduces performance
+// good load balancing for the numbers, every thread gets low and high numbers
 /*
  * Cyclic: thread i starts at k = i, step = T, end = n.
  * n = 10, T = 3:
@@ -91,6 +97,7 @@ double cyclic(long n, int T, pthread_t *threads, Work *work) {
   return pi;
 }
 
+// slower because the threads have to wait to access the same variable
 /*
  * Mutex: cyclic split, but every term goes straight into the shared sum
  * under sumLock, so only one thread adds at a time.

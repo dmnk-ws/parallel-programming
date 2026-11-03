@@ -23,6 +23,8 @@ exercises/*/*
 !exercises/*/*.h
 !exercises/*/*.sh
 !exercises/*/*.csv
+!exercises/*/*.gp
+!exercises/*/*.xlsx
 !exercises/*/Makefile
 !exercises/*/*.md
 
